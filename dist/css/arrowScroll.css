@@ -1,0 +1,97 @@
+.container {
+  margin-top: 50px;
+  max-width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.card {
+  background-color: #209aeb;
+  border: 1px solid #acacac;
+  padding: 20px 16px;
+}
+
+.arrowScroll {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.arrowScroll__outer {
+  width: calc(100% + 17px);
+  height: calc(100% + 17px);
+  overflow: scroll;
+}
+
+.arrowScroll__up, .arrowScroll__down {
+  width: 100%;
+  height: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  left: 0;
+  background-color: rgba(30, 34, 45, 0.6);
+  border: none;
+  outline: none;
+  z-index: 1;
+  cursor: pointer;
+  -webkit-transition: .3s all;
+  transition: .3s all;
+}
+
+.arrowScroll__up {
+  top: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .arrowScroll__up {
+    top: -24px;
+  }
+}
+
+.arrowScroll__up-active {
+  top: 0;
+}
+
+.arrowScroll__up-disable {
+  top: -24px;
+}
+
+.arrowScroll__down {
+  bottom: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .arrowScroll__down {
+    bottom: -24px;
+  }
+}
+
+.arrowScroll__down-active {
+  bottom: 0;
+}
+
+.arrowScroll__down-disable {
+  bottom: -24px;
+}
+
+.arrowScroll__inner {
+  width: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.arrowScroll {
+  width: 100%;
+  height: 300px;
+}
+/*# sourceMappingURL=arrowScroll.css.map */

@@ -1,0 +1,99 @@
+.container {
+    margin-top: 50px;
+    max-width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.card {
+    background-color: rgb(32, 154, 235);
+    border: 1px solid rgb(172, 172, 172);
+    padding: 20px 16px;
+}
+
+// core style
+.arrowScroll {
+    $parent: #{&};
+
+    // vars
+    $btn-height: 24px;
+
+    position: relative;
+
+    overflow: hidden;
+    z-index: 1;
+
+    @at-root #{$parent}__outer {
+        width: calc(100% + 17px);
+        height: calc(100% + 17px);
+
+        overflow: scroll;
+
+        @at-root %button {
+            width: 100%;
+            height: $btn-height;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            position: absolute;
+            left: 0;
+
+            background-color: rgba(30, 34, 45, .6);
+            border: none;
+            outline: none;
+            z-index: 1;
+            cursor: pointer;
+            transition: .3s all;
+        }
+
+        @at-root #{$parent}__up {
+            @extend %button;
+
+            top: 0;
+
+            @media only screen and (min-width: 768px) {
+                top: #{-$btn-height};
+            }
+
+            &-active {
+                top: 0;
+            }
+
+            &-disable {
+                top: #{-$btn-height};
+            }
+        }
+
+        @at-root #{$parent}__down {
+            @extend %button;
+
+            bottom: 0;
+
+            @media only screen and (min-width: 768px) {
+                bottom: #{-$btn-height};
+            }
+
+            &-active {
+                bottom: 0;
+            }
+
+            &-disable {
+                bottom: #{-$btn-height};
+            }
+        }
+
+        @at-root #{$parent}__inner {
+
+            width: 100%;
+            user-select: none;
+        }
+    }
+}
+
+// optional
+.arrowScroll {
+    width: 100%;
+    height: 300px;
+}
