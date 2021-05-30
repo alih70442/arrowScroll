@@ -25,9 +25,10 @@
 
     @at-root #{$parent}__outer {
         width: calc(100% + 17px);
-        height: calc(100% + 17px);
+        height: 100%;
 
-        overflow: scroll;
+        overflow-y: scroll;
+        overflow-x: hidden;
 
         @at-root %button {
             width: 100%;
